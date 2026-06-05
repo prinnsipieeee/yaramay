@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YARAMAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/site.css">
@@ -13,46 +15,41 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top" id="siteNavbar">
     <div class="container">
-      <a class="navbar-brand" href="#">
-          <img src="image/logo.png" alt="MySite Logo" width="150" height="40" class="logo">
+      <a class="navbar-brand" href="#home">
+        <img src="image/logo.png" alt="YARAMAY Logo" width="150" height="40" class="logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" style="padding: 7px;" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link active" href="#home" data-nav>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#about" data-nav>About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="#services" data-nav>Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#features">Feature</a>
+            <a class="nav-link" href="#features" data-nav>Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfolio</a>
+            <a class="nav-link" href="#portfolio" data-nav>Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#team">Team</a>
+            <a class="nav-link" href="#team" data-nav>Team</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#pricing">Pricing</a>
+            <a class="nav-link" href="#pricing" data-nav>Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#footer">Contact</a>
+            <a class="nav-link nav-cta" href="#contact">Contact</a>
           </li>
-          <!-- <li class="nav-item " action="login.php">
-            <a class="button text-decoration-none" style="background-color:rgb(26, 26, 126) ;" type="button" href="login.php">Login</a>
-          </li>  -->
-          <!-- Hide login button DONE-->
-
         </ul>
       </div>
     </div>
@@ -60,441 +57,576 @@
 
   <!-- Hero Section -->
   <section id="home" class="home">
-    <div class="bgcontainer">
-      <h1 class="display-3" >YARAMAY</h1>
-      <h1 class="display-4" >Make Your Digital Presence Matter</h1>
-      <p class="lead" style="color:black">We are team of talented designers making websites and we have other services </p>
-      <a href="#features" class="btn btn-dark btn-lg mt-4">Get Started</a><br>
-      <a href="#features" class="btn btn-light btn-sm mt-3">How we work</a>
+    <div class="hero-inner">
+      <h1 class="display-3 hero-animate">YARAMAY</h1>
+      <h2 class="display-4 hero-animate">
+        Make Your <span class="hero-rotate-word" aria-live="polite">Digital Presence</span> Matter
+      </h2>
+      <p class="lead hero-animate">We are team of talented designers making websites and we have other services</p>
+      <div class="hero-cta-group hero-animate">
+        <a href="#features" class="btn btn-hero btn-hero-primary">Get Started</a>
+        <a href="#about" class="btn btn-hero btn-hero-secondary">How we work</a>
+      </div>
     </div>
-    
   </section>
 
   <section id="about" class="about">
-    <div class="about-us">
-        <h4 style="color:darkgray; font-weight:700">Our Company</h4>
-            <h1 style="font-weight:700; color:darkblue; font-size:60px; padding-block-end:50px">About Us</h1>
-            <a style="font-weight:500; font-size:30px; color:red">YARAMAY</a>
-            <a style="font-weight:500; font-size:30px; color:rgb(26, 26, 126)">Computer Maintenance Services</a>
-            <p style="text-align: justify;">Based in the Cainta, Rizal, Philippines, offers Web design and System design including networking 
-                maintenance with computer hardware as well, and creates solutions for a variety of content publishing 
-                and web-based applications. The company was started in 2018 and eventually YCMS continues to get stronger.
-                Since its founding the company has been a premier player in developing solutions for the Internet and related 
-                web system programs and computer maintenance with networking support.</p>
-    </div>
     <div class="container">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="p-3 text-dark h-100">
-                    <p>
-                    The Company has prospered since its beginning and now provides services and technical support for 
-                    customers worldwide, especially in the Middle East. It has also partnered with numerous manpower 
-                    agencies and some offices, without I.T. Support, to collectively provide solutions to complex publishing 
-                    and information deployment challenges.
-                    </p>
-                </div>
+      <div class="row g-5 align-items-start about-main">
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="section-header section-header--left">
+            <span class="section-eyebrow">Our Company</span>
+            <h2 class="section-title">About Us</h2>
+            <div class="about-brand-lines">
+              <span class="about-brand-accent">YARAMAY</span>
+              <span class="about-brand-primary">Computer Maintenance Services</span>
             </div>
-            <div class="col-md-4">
-                <div class="p-3 text-dark h-100" >
-                    <p>
-                    The company’s YaraMay Computer Maintenance Services line of Computer Technical services and web design, 
-                    web site services, including the Computer Networking content into its own exclusive web System applications. 
-                    These applications are designed for providing online help using only standard web technologies that function 
-                    with numerous web browsing devices.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 text-dark h-100">
-                    <p>
-                    YaraMay Computer Maintenance Services, is the brand under Technological markets its products and services; 
-                    the company utilizes the registered names YARAMAY COMPUTER MAINTENANCE SERVICES as its URL (www.yaramay.com)
-                    and its telephone number (+966508624264 *00639075251376* 00639363903744* 00639182550953 txt only.)
-                    </p>
-                </div>
-            </div>
+            <p class="about-lead">Based in the Cainta, Rizal, Philippines, offers Web design and System design including networking
+              maintenance with computer hardware as well, and creates solutions for a variety of content publishing
+              and web-based applications. The company was started in 2018 and eventually YCMS continues to get stronger.
+              Since its founding the company has been a premier player in developing solutions for the Internet and related
+              web system programs and computer maintenance with networking support.</p>
+          </div>
         </div>
-    </div>
-    <div class="brand-logo-slider-area section-space--ptb_30">
-        <div class="logo-container" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
-            <div class="row">
-                <div class="col-lg-12">
-                  <div class="brand-logo-slider__container-area">
-                    <div class="log-container">
-                      <div class="logo-scroll-container">
-                        <div class="logo-scroll">
-                          <img src="image/logo3.png" class="img-fluid mx-2" alt="Partner Logo 3" >
-                          <img src="image/logo4.png" class="img-fluid mx-2" alt="Partner Logo 4" >
-                          <img src="image/logo5.png" class="img-fluid mx-2" alt="Partner Logo 5" >
-                          <img src="image/logo6.png" class="img-fluid mx-2" alt="Partner Logo 6" >
-                          <img src="image/logo7.png" class="img-fluid mx-2" alt="Partner Logo 7" >
-                          <img src="image/logo8.png" class="img-fluid mx-2" alt="Partner Logo 8" >
-                          <img src="image/logo9.png" class="img-fluid mx-2" alt="Partner Logo 8" >
-                          <!-- Duplicate logos for seamless looping -->
-                          <img src="image/logo3.png" class="img-fluid mx-2" alt="Partner Logo 3" >
-                          <img src="image/logo4.png" class="img-fluid mx-2" alt="Partner Logo 4" >
-                          <img src="image/logo5.png" class="img-fluid mx-2" alt="Partner Logo 5" >
-                          <img src="image/logo6.png" class="img-fluid mx-2" alt="Partner Logo 6" >
-                          <img src="image/logo7.png" class="img-fluid mx-2" alt="Partner Logo 7" >
-                          <img src="image/logo8.png" class="img-fluid mx-2" alt="Partner Logo 8" >
-                          <img src="image/logo9.png" class="img-fluid mx-2" alt="Partner Logo 9" >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        <div class="col-lg-6">
+          <div class="row g-3 about-stats">
+            <div class="col-sm-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="stat-card">
+                <span class="stat-card__value" data-count-to="2018">0</span>
+                <span class="stat-card__label">Since</span>
+              </div>
             </div>
-         </div>
+            <div class="col-sm-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="stat-card">
+                <span class="stat-card__value" data-count-to="50" data-count-suffix="+">0</span>
+                <span class="stat-card__label">Global Clients</span>
+              </div>
+            </div>
+            <div class="col-sm-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="stat-card stat-card--static">
+                <span class="stat-card__value">24/7</span>
+                <span class="stat-card__label">Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 about-cards">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-card">
+            <i class="bi bi-globe2 about-card__icon" aria-hidden="true"></i>
+            <p>The Company has prospered since its beginning and now provides services and technical support for
+              customers worldwide, especially in the Middle East. It has also partnered with numerous manpower
+              agencies and some offices, without I.T. Support, to collectively provide solutions to complex publishing
+              and information deployment challenges.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-card">
+            <i class="bi bi-tools about-card__icon" aria-hidden="true"></i>
+            <p>The company's YaraMay Computer Maintenance Services line of Computer Technical services and web design,
+              web site services, including the Computer Networking content into its own exclusive web System applications.
+              These applications are designed for providing online help using only standard web technologies that function
+              with numerous web browsing devices.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-card">
+            <i class="bi bi-link-45deg about-card__icon" aria-hidden="true"></i>
+            <p>YaraMay Computer Maintenance Services, is the brand under Technological markets its products and services;
+              the company utilizes the registered names YARAMAY COMPUTER MAINTENANCE SERVICES as its URL (www.yaramay.com)
+              and its telephone number (+966508624264 *00639075251376* 00639363903744* 00639182550953 txt only.)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="brand-logo-slider-area">
+      <div class="logo-container">
+        <div class="logo-scroll-container">
+          <div class="logo-scroll">
+            <img src="image/logo3.png" class="logo-marquee-img" alt="Partner Logo 3">
+            <img src="image/logo4.png" class="logo-marquee-img" alt="Partner Logo 4">
+            <img src="image/logo5.png" class="logo-marquee-img" alt="Partner Logo 5">
+            <img src="image/logo6.png" class="logo-marquee-img" alt="Partner Logo 6">
+            <img src="image/logo7.png" class="logo-marquee-img" alt="Partner Logo 7">
+            <img src="image/logo8.png" class="logo-marquee-img" alt="Partner Logo 8">
+            <img src="image/logo9.png" class="logo-marquee-img" alt="Partner Logo 9">
+            <img src="image/logo3.png" class="logo-marquee-img" alt="" aria-hidden="true">
+            <img src="image/logo4.png" class="logo-marquee-img" alt="" aria-hidden="true">
+            <img src="image/logo5.png" class="logo-marquee-img" alt="" aria-hidden="true">
+            <img src="image/logo6.png" class="logo-marquee-img" alt="" aria-hidden="true">
+            <img src="image/logo7.png" class="logo-marquee-img" alt="" aria-hidden="true">
+            <img src="image/logo8.png" class="logo-marquee-img" alt="" aria-hidden="true">
+            <img src="image/logo9.png" class="logo-marquee-img" alt="" aria-hidden="true">
+          </div>
+        </div>
+      </div>
     </div>
   </section>
     <hr class="section-divider">
   <section id="services" class="services-section">
-  <h2>We run all kinds of IT services that vow your success</h2>
-  <div class="services-grid">
-    <!-- IT Design -->
-    <div class="service-card" style="background-color: #5ECBFF;">
-      <img src="image/photo.png" alt="IT Design">
-      <div class="service-content">
-        <h3>IT Design</h3>
-        <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
-        <a href="#">DISCOVER NOW &rarr;</a>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">What We Offer</span>
+        <h2 class="section-title">We run all kinds of IT services that vow your success</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card service-card--design" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card__media">
+            <img src="image/photo.png" alt="IT Design" loading="lazy">
+          </div>
+          <div class="service-content">
+            <h3>IT Design</h3>
+            <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+            <a href="#" class="service-link">DISCOVER NOW <span class="service-link__arrow" aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="service-card service-card--management" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card__media">
+            <img src="image/photo2.png" alt="IT Management" loading="lazy">
+          </div>
+          <div class="service-content">
+            <h3>IT Management</h3>
+            <p>It’s possible to simultaneously manage and transform information from one server to another.</p>
+            <a href="#" class="service-link">DISCOVER NOW <span class="service-link__arrow" aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="service-card service-card--security" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card__media">
+            <img src="image/photo3.png" alt="Data Security" loading="lazy">
+          </div>
+          <div class="service-content">
+            <h3>Data Security</h3>
+            <p>Back up your database, store in a safe and secure place while still maintaining its accessibility.</p>
+            <a href="#" class="service-link">DISCOVER NOW <span class="service-link__arrow" aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- IT Management -->
-    <div class="service-card" style="background-color: #DDA372;">
-      <img src="image/photo2.png" alt="IT Management">
-      <div class="service-content">
-        <h3>IT Management</h3>
-        <p>It’s possible to simultaneously manage and transform information from one server to another.</p>
-        <a href="#">DISCOVER NOW &rarr;</a>
+  </section>
+  <section id="features" class="features-wrapper">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Why Choose Us</span>
+        <h2 class="section-title">Features</h2>
+        <p class="section-subtitle">Reliable IT capabilities built to keep your business running smoothly.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card__media">
+            <img src="image/feature1.png" alt="Technical Support" loading="lazy">
+          </div>
+          <h3>Technical Support</h3>
+          <p>24/7 expert assistance to resolve your IT issues anytime.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card__media">
+            <img src="image/feature2.png" alt="Web Design" loading="lazy">
+          </div>
+          <h3>Web Design</h3>
+          <p>Responsive and functional websites that engage users.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card__media">
+            <img src="image/feature3.png" alt="CCTV Installation" loading="lazy">
+          </div>
+          <h3>CCTV Installation</h3>
+          <p>Secure your spaces with modern surveillance solutions.</p>
+        </div>
       </div>
     </div>
-    <!-- Data Security -->
-    <div class="service-card" style="background-color: #E0CBB5;">
-      <img src="image/photo3.png" alt="Data Security">
-      <div class="service-content">
-        <h3>Data Security</h3>
-        <p>Back up your database, store in a safe and secure place while still maintaining its accessibility.</p>
-        <a href="#">DISCOVER NOW &rarr;</a>
+  </section>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Our Work</span>
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-subtitle">Bright future that we cherish. We thrive for success.</p>
       </div>
-    </div>
-  </div>
-</section>
-<section id="features" class="features-wrapper">
-  <h2>Features</h2>
-  <div class="features-grid">
-    <!-- Feature 1 -->
-    <div class="feature-card" data-aos="fade-up">
-      <img src="image/feature1.png" alt="Technical Support">
-      <h3>Technical Support</h3>
-      <p>24/7 expert assistance to resolve your IT issues anytime.</p>
-    </div>
 
-    <!-- Feature 2 -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <img src="image/feature2.png" alt="Web Design">
-      <h3>Web Design</h3>
-      <p>Responsive and functional websites that engage users.</p>
-    </div>
+      <div class="portfolio-item row align-items-center g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="portfolio-item__media">
+            <img src="image/portfolio1.png" alt="Cambridge Village HOA community portal" class="portfolio-item__img" loading="lazy">
+            <a href="#" class="portfolio-item__overlay" aria-label="View Cambridge Village HOA Portal project">View Project</a>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="portfolio-item__content">
+            <span class="portfolio-item__tag">Web Design</span>
+            <h3 class="portfolio-item__title">Cambridge Village HOA Portal</h3>
+            <p class="portfolio-item__desc">Responsive community portal with member login, document sharing, and announcement boards — delivered for a Cainta-based homeowners association.</p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Feature 3 -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <img src="image/feature3.png" alt="CCTV Installation">
-      <h3>CCTV Installation</h3>
-      <p>Secure your spaces with modern surveillance solutions.</p>
-    </div>
-</section>
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio">
-  <div class="container">
-    <h2 class="text-center">Portfolio</h2>
-    <p class="text-center text-muted mb-5">Bright future that we cherish. We thrive for success.</p>
-    <!-- Portfolio Entries -->
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <img src="image/portfolio1.png" alt="Portfolio 1" class="img-fluid rounded shadow-sm portfolio-img">
-      </div>
-      <div class="col-md-6">
-        <h3 class="text-uppercase mb-3" style="color: darkblue;">Portfolio 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus aliquet justo, eget commodo urna vehicula nec.</p>
-      </div>
-    </div>
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <h3 class="text-uppercase mb-3" style="color: darkblue;">Portfolio 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus sagittis quam sit amet sapien bibendum, at facilisis.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="image/portfolio2.png" alt="Portfolio 2" class="img-fluid rounded shadow-sm portfolio-img">
-      </div>
-    </div>
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <img src="image/portfolio3.png" alt="Portfolio 3" class="img-fluid rounded shadow-sm portfolio-img">
-      </div>
-      <div class="col-md-6">
-        <h3 class="text-uppercase mb-3" style="color: darkblue;">Portfolio 3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-    </div>
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <h3 class="text-uppercase mb-3" style="color: darkblue;">Portfolio 4</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-      </div>
-      <div class="col-md-6">
-        <img src="image/portfolio4.png" alt="Portfolio 4" class="img-fluid rounded shadow-sm portfolio-img">
-      </div>
-    </div>
-    <!-- Feature Cards -->
-    <div class="row">
-      <div class="col-lg-6 mb-4">
-        <div class="p-4 border rounded shadow-sm h-100">
-          <h5 class="text mb-3"style="color: darkblue;">Quality Assurance System</h5>
-          <p class="mb-0">Our service offerings enhance customer experience through secure and highly functional end-to-end warranty management.</p>
+      <div class="portfolio-item portfolio-item--reverse row align-items-center g-4">
+        <div class="col-md-6 order-md-2" data-aos="fade-left">
+          <div class="portfolio-item__media">
+            <img src="image/portfolio2.png" alt="Multi-branch retail network upgrade" class="portfolio-item__img" loading="lazy">
+            <a href="#" class="portfolio-item__overlay" aria-label="View Retail POS Network Upgrade project">View Project</a>
+          </div>
+        </div>
+        <div class="col-md-6 order-md-1" data-aos="fade-right">
+          <div class="portfolio-item__content">
+            <span class="portfolio-item__tag">Networking</span>
+            <h3 class="portfolio-item__title">Retail POS Network Upgrade</h3>
+            <p class="portfolio-item__desc">Structured cabling, router configuration, and printer sharing across three retail branches — reducing downtime and improving checkout reliability.</p>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 mb-4">
-        <div class="p-4 border rounded shadow-sm h-100">
-          <h5 class="text mb-3" style="color: darkblue;">Accurate Testing Processes</h5>
-          <p class="mb-0">We develop and propose product improvements through comprehensive testing, ensuring each version is refined and reliable.</p>
-        </div>
-      </div>
-      <div class="col-lg-6 mb-4">
-        <div class="p-4 border rounded shadow-sm h-100">
-          <h5 class="text mb-3"style="color: darkblue;">Smart API Generation</h5>
-          <p class="mb-0">Our automated API generation simplifies integration and accelerates development for seamless connectivity.</p>
-        </div>
-      </div>
-      <div class="col-lg-6 mb-4">
-        <div class="p-4 border rounded shadow-sm h-100">
-          <h5 class="text mb-3"style="color: darkblue;">Infrastructure Integration Technology</h5>
-          <p class="mb-0">We integrate infrastructure with cutting-edge technology to optimize performance and enable a future-proof ecosystem.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Team Section -->
-<section id="team" class="team">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 >Our Team</h2>
-      <p class="text-muted">Meet the people who make it all happen</p>
-    </div>
-    <div class="row justify-content-center">
-      <!-- Team Member 1 -->
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card text-center border-0 shadow-sm">
-          <img src="image/profile.png" class="card-img-top team-img" alt="Team Member 1">
-          <div class="card-body">
-            <h5 class="card-title">Amnisah Abubacar Sabado</h5>
-            <p class="card-text text-muted">Chief Executive Officerr</p>
+      <div class="portfolio-item row align-items-center g-4">
+        <div class="col-md-6" data-aos="fade-right">
+          <div class="portfolio-item__media">
+            <img src="image/portfolio3.png" alt="SME backup and recovery system" class="portfolio-item__img" loading="lazy">
+            <a href="#" class="portfolio-item__overlay" aria-label="View SME Backup &amp; Recovery project">View Project</a>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <div class="portfolio-item__content">
+            <span class="portfolio-item__tag">IT Management</span>
+            <h3 class="portfolio-item__title">SME Backup &amp; Recovery System</h3>
+            <p class="portfolio-item__desc">Automated monthly backups with 24/7 monitoring and emergency restore workflows for a growing professional services firm in Metro Manila.</p>
           </div>
         </div>
       </div>
-      <!-- Team Member 2 -->
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card text-center border-0 shadow-sm">
-          <img src="image/profile.png" class="card-img-top team-img" alt="Team Member 2">
-          <div class="card-body">
-            <h5 class="card-title">Ferdenand Lawag Sabado</h5>
-            <p class="card-text text-muted">General Manager</p>
+
+      <div class="portfolio-item portfolio-item--reverse row align-items-center g-4">
+        <div class="col-md-6 order-md-2" data-aos="fade-left">
+          <div class="portfolio-item__media">
+            <img src="image/portfolio4.png" alt="Warehouse CCTV surveillance installation" class="portfolio-item__img" loading="lazy">
+            <a href="#" class="portfolio-item__overlay" aria-label="View Warehouse CCTV Surveillance project">View Project</a>
+          </div>
+        </div>
+        <div class="col-md-6 order-md-1" data-aos="fade-right">
+          <div class="portfolio-item__content">
+            <span class="portfolio-item__tag">Security</span>
+            <h3 class="portfolio-item__title">Warehouse CCTV Surveillance</h3>
+            <p class="portfolio-item__desc">IP camera installation with remote viewing and motion alerts for a logistics warehouse — full coverage of loading bays and storage zones.</p>
           </div>
         </div>
       </div>
-      <!-- Team Member 3 -->
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card text-center border-0 shadow-sm">
-          <img src="image/profile.png" class="card-img-top team-img" alt="Team Member 3">
-          <div class="card-body">
-            <h5 class="card-title">Almar Medina</h5>
-            <p class="card-text text-muted">Head Technical Support in Hardware and Networking</p>
-          </div>
+
+      <div class="portfolio-capabilities">
+        <div class="portfolio-capability-card" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="portfolio-capability-card__title">Quality Assurance System</h3>
+          <p class="portfolio-capability-card__desc">Our service offerings enhance customer experience through secure and highly functional end-to-end warranty management.</p>
         </div>
-      </div>
-      <!-- Team Member 4 -->
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="card text-center border-0 shadow-sm">
-          <img src="image/profile.png" class="card-img-top team-img" alt="Team Member 4">
-          <div class="card-body">
-            <h5 class="card-title">Bong Rodilas</h5>
-            <p class="card-text text-muted">Technical Support in CCTV and Networkingr</p>
-          </div>
+        <div class="portfolio-capability-card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="portfolio-capability-card__title">Accurate Testing Processes</h3>
+          <p class="portfolio-capability-card__desc">We develop and propose product improvements through comprehensive testing, ensuring each version is refined and reliable.</p>
         </div>
-      </div>
-      <!-- Team Member 5 -->
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="500">
-        <div class="card text-center border-0 shadow-sm">
-          <img src="image/profile.png" class="card-img-top team-img" alt="Team Member 5">
-          <div class="card-body">
-            <h5 class="card-title">Joella Escamillan</h5>
-            <p class="card-text text-muted">Technical Support in Hardware and Software</p>
-          </div>
+        <div class="portfolio-capability-card" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="portfolio-capability-card__title">Smart API Generation</h3>
+          <p class="portfolio-capability-card__desc">Our automated API generation simplifies integration and accelerates development for seamless connectivity.</p>
         </div>
-      </div>
-      <!-- Team Member 6 -->
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="600">
-        <div class="card text-center border-0 shadow-sm">
-          <img src="image/profile.png" class="card-img-top team-img" alt="Team Member 6">
-          <div class="card-body">
-            <h5 class="card-title">Cecil Habac</h5>
-            <p class="card-text text-muted">Office Administrator</p>
-          </div>
-        </div>
-      </div>
-      <!-- Team Member 7 -->
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="700">
-        <div class="card text-center border-0 shadow-sm">
-          <img src="image/profile.png" class="card-img-top team-img" alt="Team Member 7">
-          <div class="card-body">
-            <h5 class="card-title">Hanan Abubacar</h5>
-            <p class="card-text text-muted">Translator</p>
-          </div>
+        <div class="portfolio-capability-card" data-aos="fade-up" data-aos-delay="400">
+          <h3 class="portfolio-capability-card__title">Infrastructure Integration Technology</h3>
+          <p class="portfolio-capability-card__desc">We integrate infrastructure with cutting-edge technology to optimize performance and enable a future-proof ecosystem.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!--Pricing Section -->
+  <!-- Team Section -->
+  <section id="team" class="team">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">The People</span>
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">Meet the people who make it all happen</p>
+      </div>
+      <div class="row justify-content-center team-grid">
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+          <article class="team-card">
+            <div class="team-card__avatar">
+              <img src="image/profile.png" alt="Amnisah Abubacar Sabado" loading="lazy">
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Amnisah Abubacar Sabado</h3>
+              <p class="team-card__role">Chief Executive Officer</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+          <article class="team-card">
+            <div class="team-card__avatar">
+              <img src="image/profile.png" alt="Ferdenand Lawag Sabado" loading="lazy">
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Ferdenand Lawag Sabado</h3>
+              <p class="team-card__role">General Manager</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+          <article class="team-card">
+            <div class="team-card__avatar">
+              <img src="image/profile.png" alt="Almar Medina" loading="lazy">
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Almar Medina</h3>
+              <p class="team-card__role">Head Technical Support in Hardware and Networking</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+          <article class="team-card">
+            <div class="team-card__avatar">
+              <img src="image/profile.png" alt="Bong Rodilas" loading="lazy">
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Bong Rodilas</h3>
+              <p class="team-card__role">Technical Support in CCTV and Networking</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
+          <article class="team-card">
+            <div class="team-card__avatar">
+              <img src="image/profile.png" alt="Joella Escamillan" loading="lazy">
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Joella Escamillan</h3>
+              <p class="team-card__role">Technical Support in Hardware and Software</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
+          <article class="team-card">
+            <div class="team-card__avatar">
+              <img src="image/profile.png" alt="Cecil Habac" loading="lazy">
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Cecil Habac</h3>
+              <p class="team-card__role">Office Administrator</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="700">
+          <article class="team-card">
+            <div class="team-card__avatar">
+              <img src="image/profile.png" alt="Hanan Abubacar" loading="lazy">
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">Hanan Abubacar</h3>
+              <p class="team-card__role">Translator</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Pricing Section -->
   <section id="pricing" class="pricing">
-  <div class="container">
-    <h2 class="text-center fw-bold">Pricing</h2>
-    <p class="text-center mb-5" style="color: darkblue; font-weight:700">Affordable price plans for you!</p>
-
-    <div class="row justify-content-center" >
-      <!-- Basic Plan -->
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card shadow-lg border-2 h-100">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <img src="image/icon.webp" alt="Basic Plan" width="70">
-            </div>
-            <h3 class="fw-bold">₱6,000<span class="fs-6">/mo</span></h3>
-            <button class="btn btn-outline-primary my-3">Buy Now</button>
-            <ul class="list-unstyled text-start px-3">
-              <li>✔ I.T support (hardware/software)</li>
-              <li>✔ Weekly site visits</li>
-              <li>✔ Computer assembly</li>
-              <li>✔ OS installation</li>
-              <li>✔ Basic software needs</li>
-              <li>✔ Troubleshooting</li>
-              <li>✔ Website maintenance</li>
-              <li>✔ Backup and restore</li>
-            </ul>
-          </div>
-        </div>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Plans</span>
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-subtitle">Affordable price plans for you!</p>
       </div>
 
-      <!-- Gold Plan -->
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card shadow-lg border-2 h-100">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <img src="image/icon2.webp" alt="Gold Plan" width="70">
+      <div class="row justify-content-center align-items-stretch pricing-grid">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <article class="pricing-card">
+            <div class="pricing-card__icon">
+              <img src="image/icon.webp" alt="Basic Plan" width="70" height="70" loading="lazy">
             </div>
-            <h3 class="fw-bold">₱12,500<span class="fs-6">/mo</span></h3>
-            <button class="btn btn-outline-primary my-3">Buy Now</button>
-            <ul class="list-unstyled text-start px-3">
-              <li>✔ Network cabling / Router setup</li>
-              <li>✔ 24/7 tech support</li>
-              <li>✔ Emergency response</li>
-              <li>✔ Monthly backups</li>
-              <li>✔ CCTV Maintenance / Remoting</li>
-              <li>✔ Web/system support</li>
+            <h3 class="pricing-card__price">₱6,000<span class="pricing-card__period">/mo</span></h3>
+            <p class="pricing-card__label">Basic</p>
+            <button type="button" class="btn pricing-card__btn pricing-card__btn--outline">Buy Now</button>
+            <ul class="pricing-card__features">
+              <li>I.T support (hardware/software)</li>
+              <li>Weekly site visits</li>
+              <li>Computer assembly</li>
+              <li>OS installation</li>
+              <li>Basic software needs</li>
+              <li>Troubleshooting</li>
+              <li>Website maintenance</li>
+              <li>Backup and restore</li>
             </ul>
-          </div>
+          </article>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <article class="pricing-card pricing-card--featured">
+            <span class="pricing-card__badge">Most Popular</span>
+            <div class="pricing-card__icon">
+              <img src="image/icon2.webp" alt="Gold Plan" width="70" height="70" loading="lazy">
+            </div>
+            <h3 class="pricing-card__price">₱12,500<span class="pricing-card__period">/mo</span></h3>
+            <p class="pricing-card__label">Gold</p>
+            <button type="button" class="btn pricing-card__btn pricing-card__btn--primary">Buy Now</button>
+            <ul class="pricing-card__features">
+              <li>Network cabling / Router setup</li>
+              <li>24/7 tech support</li>
+              <li>Emergency response</li>
+              <li>Monthly backups</li>
+              <li>CCTV Maintenance / Remoting</li>
+              <li>Web/system support</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <article class="pricing-card">
+            <div class="pricing-card__icon">
+              <img src="image/icon3.webp" alt="Plus Plan" width="70" height="70" loading="lazy">
+            </div>
+            <h3 class="pricing-card__price">₱8,500<span class="pricing-card__period">/mo</span></h3>
+            <p class="pricing-card__label">Plus</p>
+            <button type="button" class="btn pricing-card__btn pricing-card__btn--outline">Buy Now</button>
+            <ul class="pricing-card__features">
+              <li>Networking/printer sharing</li>
+              <li>Internal PC cleaning</li>
+              <li>Web &amp; system maintenance</li>
+              <li>Switch/router/UTP/rj45 config</li>
+            </ul>
+          </article>
         </div>
       </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">We'd love to hear from you. Send us a message or reach out through the details below.</p>
+      </div>
 
-      <!-- Plus Plan -->
-      <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card shadow-lg border-2 h-100">
-          <div class="card-body text-center">
-            <div class="mb-3">
-              <img src="image/icon3.webp" alt="Plus Plan" width="70">
-            </div>
-            <h3 class="fw-bold">₱8,500<span class="fs-6">/mo</span></h3>
-            <button class="btn btn-outline-primary my-3">Buy Now</button>
-            <ul class="list-unstyled text-start px-3">
-              <li>✔ Networking/printer sharing</li>
-              <li>✔ Internal PC cleaning</li>
-              <li>✔ Web & system maintenance</li>
-              <li>✔ Switch/router/UTP/rj45 config</li>
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="contact-info">
+            <h3 class="contact-info__heading">Contact Details</h3>
+            <ul class="contact-info__list">
+              <li class="contact-info__item">
+                <i class="bi bi-geo-alt-fill contact-info__icon" aria-hidden="true"></i>
+                <div>
+                  <span class="contact-info__label">Address</span>
+                  <address class="contact-info__value">Cluster 5 Unit 1-G Cambridge Village Floodway, Brgy. San Andres, Cainta, Rizal</address>
+                </div>
+              </li>
+              <li class="contact-info__item">
+                <i class="bi bi-telephone-fill contact-info__icon" aria-hidden="true"></i>
+                <div>
+                  <span class="contact-info__label">Phone</span>
+                  <a href="tel:+639075251376" class="contact-info__value">09075251376</a>
+                </div>
+              </li>
+              <li class="contact-info__item">
+                <i class="bi bi-envelope-fill contact-info__icon" aria-hidden="true"></i>
+                <div>
+                  <span class="contact-info__label">Email</span>
+                  <a href="mailto:yaramayservices@gmail.com" class="contact-info__value">yaramayservices@gmail.com</a>
+                </div>
+              </li>
             </ul>
+
+            <div class="contact-social">
+              <h3 class="contact-social__heading">Visit our social channels</h3>
+              <div class="contact-social__links">
+                <a href="#" class="contact-social__link contact-social__link--facebook" aria-label="Facebook">
+                  <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="contact-social__link contact-social__link--twitter" aria-label="Twitter">
+                  <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="contact-social__link contact-social__link--instagram" aria-label="Instagram">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="contact-social__link contact-social__link--linkedin" aria-label="LinkedIn">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-admin">
+              <h3 class="contact-admin__heading">Login to Dashboard</h3>
+              <a class="btn contact-admin__btn" href="admin/login.php">Login Dashboard</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="contact-form-card">
+            <div id="contact-alert" class="alert d-none mb-3" role="alert"></div>
+            <form id="contact-form" action="contact.php" method="POST" novalidate>
+              <h3 class="contact-form__heading">Message us</h3>
+              <p class="contact-form__intro">Obtaining further information by making contact with our experienced IT staff.</p>
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name" class="form-control contact-form__input" placeholder="Enter your name" required autocomplete="name">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" id="email" name="email" class="form-control contact-form__input" placeholder="Enter your email" required autocomplete="email">
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea id="message" name="message" rows="5" class="form-control contact-form__input" placeholder="Write your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn contact-form__submit">Send Message</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="contact" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-4">Contact Us</h2>
-    <p class="text-center  mb-5" style="color: darkblue;">We’d love to hear from you. Send us a message or reach out through the details below.</p>
-
-    <div class="row">
-      <!-- Contact Info -->
-      <div class="col-md-5 mb-4" data-aos="fade-right">
-        <h4 class="fw-bold mb-3">Contact Us</h4>
-        <p><h5 class="bi bi-geo-alt-fill me-2"style="color: darkblue;">Address</h5>Cluster 5 Unit 1-G Cambridge Village Floodway, Brgy. San Andres, Cainta, Rizal</p>
-        <p><h5 class="bi bi-telephone-fill me-2"style="color: darkblue;">Contact</h5>09075251376</p>
-        <p><h5 class="bi bi-envelope-fill me-2" style="color: darkblue;">Email</h5>yaramayservices@gmail.com</p>
-
-        <!-- Social Media Icons -->
-        <div class="mt-4">
-          <h3>Visit our social channels</h3>
-          <a href="#" class="text-primary me-3"><i class="bi bi-facebook fs-4"style="color: darkblue;"></i></a>
-          <a href="#" class="text-info me-3"><i class="bi bi-twitter fs-4" style="color: darkblue;"></i></a>
-          <a href="#" class="text-danger me-3"><i class="bi bi-instagram fs-4"style="color: darkblue;"></i></a>
-          <a href="#" class="text-dark"><i class="bi bi-linkedin fs-4"style="color: darkblue;"></i></a>
-        </div>
-
-        <div class="mt-4">
-          <h3>Login to Dashboard</h3>
-           <div class="p-0 m-0" action="login.php">
-            <a class="button text-decoration-none btn btn-sm " style="background-color:rgb(26, 26, 126) ;" type="button" href="admin/login.php">Login Dashboard</a>
-          </div> 
-        </div>
-      </div>
-
-      <!-- Contact Form -->
-      <div class="col-md-7" data-aos="fade-left">
-        <div id="contact-alert" class="alert d-none mb-3" role="alert"></div>
-        <form id="contact-form" action="contact.php" method="POST" novalidate>
-          <h4>Message us</h4>
-          <p>Obtaining further information by make a contact with our experienced IT staffs.</p>
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Your Message</label>
-            <textarea id="message" name="message" rows="5" class="form-control" placeholder="Write your message here..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100" style="background-color: darkblue;">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
-  <footer id="footer" style="background-color: #000;">
-    <div class="container" style="background-color: #000;">
-      <p style="color: white;">&copy; 2025 YARAMAY. All rights reserved.</p>
+  <footer id="footer" class="site-footer">
+    <div class="site-footer__accent" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row g-4 site-footer__grid">
+        <div class="col-md-4">
+          <a href="#home" class="site-footer__logo">
+            <img src="image/logo.png" alt="YARAMAY Logo" width="150" height="40" loading="lazy">
+          </a>
+          <p class="site-footer__tagline">Your trusted tech partner for web design, IT support, and networking solutions since 2018.</p>
+        </div>
+        <div class="col-md-4">
+          <h3 class="site-footer__heading">Quick Links</h3>
+          <ul class="site-footer__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3 class="site-footer__heading">Contact</h3>
+          <ul class="site-footer__contact">
+            <li>
+              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              <span>Cainta, Rizal, Philippines</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+              <a href="tel:+639075251376">09075251376</a>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              <a href="mailto:yaramayservices@gmail.com">yaramayservices@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 YARAMAY. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/site.js"></script>
 </body>
