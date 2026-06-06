@@ -1687,19 +1687,22 @@ textarea.contact-form__input {
 }
 
 .registration-sidebar__media {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-medium);
-  margin-block-end: 1.5rem;
-  aspect-ratio: 4 / 3;
-  background-color: var(--brand-primary);
+  background-color: #ffffff;
+  border-radius: 1.5rem; 
+  padding:10px;       
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .registration-sidebar__image {
   display: block;
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+
   object-fit: cover;
 }
 
