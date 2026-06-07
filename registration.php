@@ -39,7 +39,11 @@ $phHandlers = [];
 for ($i = 1; $i <= 5; $i++) {
     $value = field('ph_handler_' . $i);
     if ($value !== '') {
-        $phHandlers[$i] = $value;
+        $phHandlers[$i] = [
+        'handler' => $value,
+        'person' => field('ph_handler_' . $i . '_person'),
+        'number' => field('ph_handler_' . $i . '_number') 
+        ];
     }
 }
 
@@ -47,7 +51,11 @@ $foreignHandlers = [];
 for ($i = 1; $i <= 5; $i++) {
     $value = field('foreign_handler_' . $i);
     if ($value !== '') {
-        $foreignHandlers[$i] = $value;
+        $foreignHandlers[$i] = [
+            'agency' => $value,
+            'person' => field('foreign_handler_' . $i . '_person'),
+            'number' => field('foreign_handler_' . $i . '_number') 
+        ];
     }
 }
 
@@ -70,7 +78,9 @@ $body .= "AGENCY HANDLERS IN PHILIPPINES\r\n";
 $body .= str_repeat('-', 50) . "\r\n";
 if ($phHandlers) {
     foreach ($phHandlers as $num => $name) {
-        $body .= "{$num}. {$name}\r\n";
+        $body .= "{$num}. {$name['handler']}\r\n";
+        $body .= " Contact Person: {$name['person']}\r\n";
+        $body .= " Contac Number: {$name['number']}\r\n";
     }
 } else {
     $body .= "(none provided)\r\n";
@@ -81,7 +91,9 @@ $body .= "FOREIGN RECRUITMENT / MANPOWER HANDLERS\r\n";
 $body .= str_repeat('-', 50) . "\r\n";
 if ($foreignHandlers) {
     foreach ($foreignHandlers as $num => $name) {
-        $body .= "{$num}. {$name}\r\n";
+        $body .= "{$num}. {$name['agency']}\r\n";
+        $body .= " Contact Person: {$name['person']}\r\n";
+        $body .= " Contact Number: {$name['number']}\r\n";
     }
 } else {
     $body .= "(none provided)\r\n";
