@@ -36,27 +36,42 @@ if ($position === 'other' && $positionOther !== '') {
 }
 
 $phHandlers = [];
-for ($i = 1; $i <= 5; $i++) {
-    $value = field('ph_handler_' . $i);
-    if ($value !== '') {
-        $phHandlers[$i] = [
-        'handler' => $value,
-        'person' => field('ph_handler_' . $i . '_person'),
-        'number' => field('ph_handler_' . $i . '_number') 
-        ];
+if(isset($_POST['ph_handler_name']) && is_array($_POST['ph_handler_name'])){
+    $phName = $_POST['ph_handler_name'];
+    $phPerson = $_POST['ph_handler_person'] ?? [];
+    $phNumber = $_POST['ph_handler_number'] ?? [];
+
+    $count = 1;
+    foreach ($phName as $index => $nameValue) {
+        if(trim($nameValue) !== '') {
+            $phHandlers[$count] = [
+                'agency' => trim($nameValue),
+                'person' => trim($phPerson[$index] ?? ''),
+                'number' => trim($phNumber[$index] ?? '')
+            ];
+            $count++;
+        }
     }
 }
 
 $foreignHandlers = [];
-for ($i = 1; $i <= 5; $i++) {
-    $value = field('foreign_handler_' . $i);
-    if ($value !== '') {
-        $foreignHandlers[$i] = [
-            'agency' => $value,
-            'person' => field('foreign_handler_' . $i . '_person'),
-            'number' => field('foreign_handler_' . $i . '_number') 
-        ];
+if(isset($_POST['fr_handler_name']) && is_array($_POST['fr_handler_name'])){
+    $frNames = $_POST['fr_handler_name'];
+    $frPerson = $_POST['fr_handler_name'] ?? [];
+    $frNumber = $_POST['fr_handler_number'] ?? [];
+
+    $count = 1; 
+    foreach($frNames as $index => $nameValue){
+        if(trim($nameValue) !== ''){
+            $foreignHandlers[$count] = [
+                'agency' => trim($nameValue),
+                'person' => trim($phPerson[$index] ?? ''),
+                'number' => trim($phNumber[$index] ?? '')
+            ];
+            $count++;
+        }
     }
+
 }
 
 $recipients = 'renier.trenuela@gmail.com, Sab_princes@yahoo.com';
@@ -74,13 +89,19 @@ $body .= "Position:                        {$positionLabel}\r\n";
 $body .= "Company Name or Individual:    {$companyName}\r\n";
 $body .= "Interested in System:            {$interested}\r\n\r\n";
 
-$body .= "AGENCY HANDLERS IN PHILIPPINES\r\n";
+$body .= "AGENCY HANDLERS IN THE PHILIPPINES\r\n";
 $body .= str_repeat('-', 50) . "\r\n";
-if ($phHandlers) {
-    foreach ($phHandlers as $num => $name) {
-        $body .= "{$num}. {$name['handler']}\r\n";
-        $body .= " Contact Person: {$name['person']}\r\n";
-        $body .= " Contac Number: {$name['number']}\r\n";
+
+if (!empty($phHandlers)) {
+    foreach ($phHandlers as $num => $data) {
+        $agencyText = $data['agency'] !== '' ? $data['agency'] : '(none)';
+        $personText = $data['person'] !== '' ? $data['person'] : '(none)';
+        $numberText = $data['number'] !== '' ? $data['number'] : '(none)';
+
+        $body .= "{$num}.\r\n";
+        $body .= "   Agency Name:    {$agencyText}\r\n";
+        $body .= "   Contact Person: {$personText}\r\n";
+        $body .= "   Contact Number: {$numberText}\r\n";
     }
 } else {
     $body .= "(none provided)\r\n";
@@ -89,11 +110,17 @@ $body .= "\r\n";
 
 $body .= "FOREIGN RECRUITMENT / MANPOWER HANDLERS\r\n";
 $body .= str_repeat('-', 50) . "\r\n";
-if ($foreignHandlers) {
-    foreach ($foreignHandlers as $num => $name) {
-        $body .= "{$num}. {$name['agency']}\r\n";
-        $body .= " Contact Person: {$name['person']}\r\n";
-        $body .= " Contact Number: {$name['number']}\r\n";
+
+if (!empty($foreignHandlers)) {
+    foreach ($foreignHandlers as $num => $data) {
+        $agencyText = $data['agency'] !== '' ? $data['agency'] : '(none)';
+        $personText = $data['person'] !== '' ? $data['person'] : '(none)';
+        $numberText = $data['number'] !== '' ? $data['number'] : '(none)';
+
+        $body .= "{$num}.\r\n";
+        $body .= "   Agency Name:    {$agencyText}\r\n";
+        $body .= "   Contact Person: {$personText}\r\n";
+        $body .= "   Contact Number: {$numberText}\r\n";
     }
 } else {
     $body .= "(none provided)\r\n";
@@ -115,6 +142,16 @@ $headers = [
     'X-Mailer: PHP/' . phpversion(),
     'Content-Type: text/plain; charset=UTF-8',
 ];
+
+//TESTING OF CODE
+echo "<pre>";
+echo "To: " . $recipients . "\n";
+echo "Subject: " . $subject . "\n";
+echo str_repeat('=', 50) . "\n";
+echo $body;
+echo "</pre>";
+exit;
+
 
 $sent = mail($recipients, $subject, $body, implode("\r\n", $headers));
 
